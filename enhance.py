@@ -567,8 +567,9 @@ class NeuralEnhancer(object):
         if args.rendering_histogram:
             for i in range(3):
                 output[:,:,i] = self.match_histograms(output[:,:,i], original[:,:,i])
-
-        return scipy.misc.toimage(output, cmin=0, cmax=255)
+        from PIL import Image
+        output=output.astype(np.uint8)
+        return Image.fromarray(output)
 
 
 if __name__ == "__main__":
@@ -577,10 +578,11 @@ if __name__ == "__main__":
         enhancer = NeuralEnhancer(loader=True)
         enhancer.train()
     else:
+        import imageio
         enhancer = NeuralEnhancer(loader=False)
         for filename in args.files:
             print(filename, end=' ')
-            img = scipy.ndimage.imread(filename, mode='RGB')
+            img = imageio.imread(filename, mode='RGB')
             out = enhancer.process(img)
             out.save(os.path.splitext(filename)[0]+'_ne%ix.png' % args.zoom)
             print(flush=True)
