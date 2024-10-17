@@ -1,3 +1,30 @@
+
+To work with python3.10:
+
+
+git clone https://github.com/ford442/neural-enhance.git
+
+cd neural-enhance
+
+pip3 install -r requirements.txt
+
+git clone https://github.com/ford442/Theano.git
+
+cd Theano
+
+pip3 install .
+
+pip3 install setuptools==64.0.2
+
+cd ..
+
+export OMP_NUM_THREADS=6
+
+python3 enhance.py --type=photo --zoom=2 **filename**
+
+
+
+
 Neural Enhance
 ==============
 
