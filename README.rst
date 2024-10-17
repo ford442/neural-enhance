@@ -13,7 +13,7 @@ cd Theano
 
 pip3 install -r requirements.txt
 
-python3 setup.py install
+pip install -e .
 
 pip3 install setuptools==64.0.2
 
