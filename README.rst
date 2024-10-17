@@ -7,7 +7,7 @@ cd neural-enhance
 
 pip3 install -r requirements.txt
 
-git clone https://github.com/ford442/Theano.git
+git clone https://github.com/ford442/Theano.git -b 0.8.X
 
 cd Theano
 
