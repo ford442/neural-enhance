@@ -11,6 +11,8 @@ git clone https://github.com/ford442/Theano.git
 
 cd Theano
 
+pip3 uninstall Theano -y
+
 pip3 install -r requirements.txt
 
 pip install -e .
