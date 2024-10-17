@@ -12,7 +12,7 @@ git clone https://github.com/ford442/Theano.git
 
 cd Theano
 
-pip3 install .
+python3 setup.py install
 
 pip3 install setuptools==64.0.2
 
